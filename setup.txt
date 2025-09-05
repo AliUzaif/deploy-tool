@@ -1,10 +1,44 @@
-to setup this deploy tool
+Deploy Tool Setup Guide
+-----------------------
 
-1 setup infrastructure for the deploy tool (not the monitoring part)
-go to terraform folder in the root directory and do terraform init terraform plan and terraform apply
+This guide explains how to set up the Deploy Tool and its Monitoring infrastructure using Terraform.
 
+Prerequisites
+-------------
+Before starting, make sure you have the following installed and configured:
+- Terraform (v1.0+ recommended)
+- AWS CLI configured with valid credentials
+- Access to the repository containing this project
 
+1. Setup Infrastructure for the Deploy Tool (excluding monitoring)
+------------------------------------------------------------------
+1. Navigate to the "terraform" folder in the root directory:
+   cd terraform
 
-2. to setup monitoring infrastructure
-go to monitoring/terraform and do the same terraform init, terraform plan and terraform apply, this will setup the monitoring instance
-then ssh into the instance and save the files in the same structure as it is present inside monitoring and also is mentioned in documentation
+2. Run the following commands:
+   terraform init
+   terraform plan
+   terraform apply
+
+This will provision the core infrastructure for the Deploy Tool.
+
+2. Setup Monitoring Infrastructure
+----------------------------------
+1. Navigate to the "monitoring/terraform" directory:
+   cd monitoring/terraform
+
+2. Run the following commands:
+   terraform init
+   terraform plan
+   terraform apply
+
+This will provision the monitoring instance.
+
+3. Once the instance is up:
+   - SSH into the monitoring instance:
+     ssh -i <your-key>.pem ubuntu@<instance-public-ip>
+
+   - Copy/save the required files, maintaining the same structure as in the "monitoring" directory (as mentioned in the documentation).
+
+--------------------------------------------------------------
+You have now successfully set up both the Deploy Tool and its Monitoring infrastructure.
