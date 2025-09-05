@@ -36,7 +36,7 @@ This will provision the monitoring instance.
 
 3. Once the instance is up:
    - SSH into the monitoring instance:
-     ssh -i <your-key>.pem ubuntu@<instance-public-ip>
+     ssh -i <your-key>.pem ec2-user@<instance-public-ip>
 
    - Copy/save the required files, maintaining the same structure as in the "monitoring" directory (as mentioned in the documentation).
 
