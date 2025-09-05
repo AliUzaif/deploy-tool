@@ -1,0 +1,10 @@
+to setup this deploy tool
+
+1 setup infrastructure for the deploy tool (not the monitoring part)
+go to terraform folder in the root directory and do terraform init terraform plan and terraform apply
+
+
+
+2. to setup monitoring infrastructure
+go to monitoring/terraform and do the same terraform init, terraform plan and terraform apply, this will setup the monitoring instance
+then ssh into the instance and save the files in the same structure as it is present inside monitoring and also is mentioned in documentation
